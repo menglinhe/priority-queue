@@ -1,0 +1,45 @@
+<p>queue-visualization works!</p>
+ 
+  <div style="width: auto; margin: 20px">
+    <div>
+      <input id="enqueue" #newElement />
+      &nbsp;
+      <button (click)="add(newElement.value)">Enqueue</button>
+      &nbsp;<b>Or</b>&nbsp;
+      <button (click)="addRan()">Random Enqueue</button>
+    </div>
+    
+    <br>
+    
+    <div>
+      <input id="dequeue" #removeElement />
+      &nbsp;
+      <button (click)="remove(removeElement.value)">Remove</button>
+      &nbsp;<b>Or</b>&nbsp;
+      <button (click)="dequeue()">Default Dequeue</button>
+    </div>
+    
+    <br>
+
+    <div>
+      <button (click)="display()">Display min heap</button>
+      &nbsp;
+      <button (click)="displaySorted()">Display sorted queue</button>
+    </div>
+    
+    <br>
+
+    <div>
+      <button (click)="peek()">Peek</button>
+      &nbsp;
+      <button (click)="clear()">Clear</button>
+    </div>
+
+    <hr />
+
+    <div class="message" *ngIf="priorityQueue.peek()">
+      First element in the list: {{priorityQueue.peek()}}
+    </div>
+    <div class="message" *ngIf="priorityQueue.isEmpty()">Priority Queue is Empty</div>
+    <hr />
+  </div>
